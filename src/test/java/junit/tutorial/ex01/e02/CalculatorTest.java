@@ -1,4 +1,4 @@
-package junit.tutorial.ex01.e01;
+package junit.tutorial.ex01.e02;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class StringUtilsTest {
+class CalculatorTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -27,15 +27,9 @@ class StringUtilsTest {
 	}
 
 	@Test
-	void ex01e01test1() {
-		assertEquals("aaa",StringUtils.toSnakeCase("aaa"),"¬Œ÷");
+	void ex01e02test() {
+		Calculator test=new Calculator();
+		assertThrows(IllegalArgumentException.class,()->test.divide(3, 0));
 	}
-	@Test
-	void  ex01e01test2() {
-		assertEquals("hello_world",StringUtils.toSnakeCase("HelloWorld"),"¬Œ÷");
-	}
-	@Test
-	void  ex01e01test3() {
-		assertEquals("practice_junit",StringUtils.toSnakeCase("practiceJunit"),"¬Œ÷");
-	}
+
 }
